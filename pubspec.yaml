@@ -1,0 +1,7 @@
+name: dartlero_exercice6
+version: 1.0.0
+author: Hassane Moussa Abba  <hazbef@yahoo.fr>
+description: First project
+dependencies:
+  browser: any
+  dartlero: any

@@ -1,0 +1,50 @@
+
+body {
+  background-color: #F8F8F8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 15px;
+}
+
+form { 
+  background: #9cbc2c; 
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+  border-radius: 5px; 
+  padding: 20px; 
+  width: 400px; 
+} 
+
+h1, p {
+  color: #333;
+}
+
+.auto-style1 { 
+  width: 25%; 
+  border: 1px solid #0000FF; 
+} 
+
+.auto-style2 { 
+  width: 107px; 
+ } 
+ 
+ #_name, #email, #phone, #code_pin { 
+  width: 155px; 
+} 
+
+.btns { 
+  width: 127px; 
+} 
+
+input { 
+  display: block; 
+  border: 1px solid #cccccc; 
+} 
+
+:required { 
+  border-color: #1be032; 
+  box-shadow: 
+    0 0 5px rgba(57, 237, 78, .5); 
+} 

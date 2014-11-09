@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="dartlero_exercice6.css">
+    <title>Dartlero exercice6</title>
+  </head>
+  
+  <body>
+    <header><h1>Dartlero Exercice6</h1></header> 
+    <section><strong>Gérer Contacts</strong></section> 
+      
+<form name="Gestion Contacts" autocomplete> 
+
+      <table class="auto-style1"> 
+          <tr> 
+              <td class="auto-style2">Nom</td> 
+              <td><input id="_name" type="text" required autofocus /></td> 
+          </tr> 
+          
+          <tr> 
+              <td class="auto-style2">Courriel</td> 
+              <td><input id="email" type="email"/></td> 
+          </tr> 
+
+          <tr> 
+              <td class="auto-style2">Téléphone</td> 
+              <td> 
+                  <input id="phone" type="text" required/></td> 
+          </tr> 
+          
+          <tr> 
+              <td class="auto-style2">Date d'anniversaire</td> 
+              <td> 
+                  <input id="birth_date" type="date" required/></td>
+          </tr> 
+
+          <tr> 
+              <td class="auto-style2">Numéro</td> 
+              <td> 
+                  <input id="numero" type="text" required placeholder="000-0000000-00" 
+                   pattern="[0-9]{3}-[0-9]{7}-[0-9]{2}"/> 
+              </td> 
+          </tr> 
+
+
+          <tr> 
+              <td class="auto-style2">Code pin</td> 
+              <td> 
+                  <input id="code_pin" type="number" min="1" max="999999" required/></td> 
+          </tr> 
+                
+           <tr> 
+              <td> 
+                 <button value="" id="btn_creer" class="btns">Créer contact</button> 
+              </td>             
+           </tr> 
+           
+          <tr> 
+             <td> 
+                <button value="" id="btn_supprimer" class="btns">Supprimer contact</button> 
+             </td>
+          </tr> 
+           
+          <tr> 
+             <td> 
+                <button value="" id="btn_modifier" class="btns">Modifier contact</button> 
+             </td>
+           </tr> 
+           
+      </table> 
+      </form> 
+    
+    <script async type="application/dart" src="dartlero_exercice6_web.dart"></script>
+    <script async src="packages/browser/dart.js"></script>
+    
+  </body>
+</html>
