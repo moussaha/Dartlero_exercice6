@@ -39,6 +39,8 @@ class GererContact {
     acc["numero"] = numero;
     acc["proprietaire"] = proprietaire.toJson();
     acc["code_pin"] = code_pin;
+    acc["creation_date"] = date_created.toString();
+    acc["modified_date"] = date_modified.toString();
     return acc;
   }
   

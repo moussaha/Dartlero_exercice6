@@ -54,7 +54,7 @@ notEmpty(Event e) {
       InputElement inel = e.currentTarget as InputElement; 
       var input = inel.value; 
       if (input == null || input.isEmpty) { 
-        window.alert("Tous les champs doivent être remplis ${inel.id}!"); 
+       // window.alert("Tous les champs doivent être remplis ${inel.id}!"); 
         inel.focus(); 
       }
     } 
@@ -85,34 +85,17 @@ try {
   } 
 } 
 
-
-LireDonnee(Event e) { 
-  // Voir données: 
-  var cle = 'GererContact:${numero.value}'; 
-
-  if (!window.localStorage.containsKey(cle)) { 
-    window.alert("Contact non retrouvé!"); 
-    numero.focus(); 
-    return; 
-  } 
-  window.alert(""); 
-  
-// Lire données à partir de la BD locale: 
-String acc_json = window.localStorage[cle]; 
-contact = new GererContact.fromJsonString(acc_json);
- _name.value = contact.proprietaire.name; 
- email.value = contact.proprietaire.email;
-  phone.value = contact.proprietaire.phone; 
-  birth_date.value = contact.proprietaire.date_birth.toString();
-  code_pin.value = contact.code_pin.toString();
-  numero.value = contact.numero;
-}
-
 supprimerDonnee(Event e) => supprimer(); 
 
 supprimer() { 
-  numero.value = ""; 
-  numero.focus(); 
+  window.localStorage.remove("GererContact:${per.phone}");
+  _name.value = ""; 
+    email.value = "";
+     phone.value = ""; 
+     birth_date.value = "";
+     code_pin.value = "";
+     numero.value = ""; 
+  _name.focus(); 
 }
 
 ModifierContact(Event e) { 
@@ -130,8 +113,7 @@ lireBDLocal() {
   listContacts = []; 
   if (window.localStorage.isNotEmpty){
   for (var cle in window.localStorage.keys) { 
-   //if (cle.substring(0,4) == "contacts") 
-      listContacts.add(cle.substring(12)); 
+      listContacts.add(cle.substring(13)); 
   } 
  } 
 } 
@@ -187,24 +169,18 @@ voirContacts(Event e) {
     
     // Voir donnees: 
     table.classes.add('border'); 
-    constructTrows(); 
+    
+    _name.value = _contact.proprietaire.name; 
+    email.value = _contact.proprietaire.email;
+     phone.value = _contact.proprietaire.phone; 
+     birth_date.valueAsDate = _contact.proprietaire.date_birth;
+     code_pin.value = _contact.code_pin.toString();
+     numero.value = _contact.numero;
+    
   } 
 } 
 
-constructTrows() { 
-  var sb = new StringBuffer(); 
 
-  sb.write('<p><tr><b><td>proprietaire:</td></b>   <td>${contact.proprietaire.name}</td></tr><br/>'); 
-  sb.write('<tr><b><td>phone:</td></b>     <td>${contact.proprietaire.phone}</td></tr><br/>'); 
-  sb.write('<tr><b><td>Email:</td></b>       <td>${contact.proprietaire.email}</td></tr><br/>'); 
-  sb.write('<tr><b><td>Birthdate:</td></b>   <td>${contact.proprietaire.date_birth}</td></tr><br/>'); 
-  sb.write('<tr><b><td>Pin code:</td></b>    <td>${contact.code_pin}</td></tr><br/>'); 
-  sb.write('<tr><b><td>Created on:</td></b>  <td>${contact.date_created}</td></tr><br/>'); 
-  sb.write('<tr><b><td>Modified on:</td></b> <td>${contact.date_modified}</td></tr></p>'); 
-  donnee = sb.toString(); 
-  Element trows = new Element.html(donnee); 
-  table.children.add(trows); 
-} 
 
 
 
