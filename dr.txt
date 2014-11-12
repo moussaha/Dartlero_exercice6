@@ -1,0 +1,31 @@
+ex06
+
+14/20
+
+-5
+Je ne peux pas créer un contact
+Breaking on exception: The null object does not have a getter 'phone'.
+
+-1
+attention: formatage (voir: https://www.dartlang.org/articles/style-guide/)
+GererContact_entity
+-->
+ContactEntity
+
+PersonnneContact_model
+-->
+ContactModel
+
+---
+
+14/20
+-1
+Contact_model.dart
+-->
+contactModel.dart
+voir https://www.dartlang.org/articles/style-guide/
+print('Project Model');
+-->
+print('Contact Model');
+-5 
+Create a form to add a new contact. Validate new data. Use a local storage to save the contacts.
